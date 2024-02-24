@@ -101,15 +101,13 @@ function App() {
         ))}
       </select>
 
-      {selectedCity !== "Select City" &&
-      selectedState !== "Select State" &&
-      selectedCountry !== "Select Country" ? (
-        <div>
-          <p>{`You Selected ${selectedCity}, ${selectedState}, ${selectedCountry}`}</p>
-        </div>
-      ) : (
-        ""
-      )}
+      {selectedCountry !== "Select Country" &&
+        selectedState !== "Select State" &&
+        selectedCity !== "Select City" && (
+          <div>
+            <p>{`You Selected ${selectedCity}, ${selectedState}, ${selectedCountry}`}</p>
+          </div>
+        )}
     </div>
   );
 }
