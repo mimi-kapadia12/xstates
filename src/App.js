@@ -10,9 +10,23 @@ function App() {
   const [selectedCity, setSelectedCity] = useState("Select City");
 
   useEffect(() => {
-    fetch("https://crio-location-selector.onrender.com/countries")
-      .then((response) => response.json())
-      .then((data) => setCountries(data));
+    // Fetch countries on component mount
+    const fetchCountries = async () => {
+      try {
+        const response = await fetch(
+          "https://crio-location-selector.onrender.com/countries"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch countries");
+        }
+        const data = await response.json();
+        setCountries(data);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+
+    fetchCountries();
   }, []);
 
   useEffect(() => {
