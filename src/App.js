@@ -106,7 +106,7 @@ function App() {
         selectedCity !== "Select City" && (
           <div>
             <p>
-              You Selected <b>${selectedCity}</b>
+              You Selected <b>{selectedCity}</b>
               <span>{`, ${selectedState}, ${selectedCountry}`}</span>
             </p>
           </div>
