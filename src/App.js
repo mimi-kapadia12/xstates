@@ -105,7 +105,10 @@ function App() {
         selectedState !== "Select State" &&
         selectedCity !== "Select City" && (
           <div>
-            <p>{`You Selected ${selectedCity}, ${selectedState}, ${selectedCountry}`}</p>
+            <p>
+              You Selected <b>${selectedCity}</b>
+              <span>{`, ${selectedState}, ${selectedCountry}`}</span>
+            </p>
           </div>
         )}
     </div>
